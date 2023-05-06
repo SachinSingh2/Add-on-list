@@ -1,0 +1,43 @@
+
+# This is to get the data .
+GET http://localhost:3001/Books HTTP/1.1
+Content-Type: application/json
+
+
+
+
+###
+
+
+# This is used to post the request.
+POST http://localhost:3001/Books HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "title":"Harry potter"
+}
+
+
+
+###
+
+
+
+# This is used to put the data after change .
+PUT http://localhost:3001/Books/1 HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "title":"Dark tower"
+}
+
+
+
+###
+
+
+# This is to delete data 
+DELETE  http://localhost:3001/Books/1 HTTP/1.1
+Content-Type: application/json
