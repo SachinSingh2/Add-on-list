@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
+import useBooksContext from '../hooks/UseBookContext';
 
-export default function BookEdit({ BookData , onHide , onEdit }) {
+export default function BookEdit({ BookData , onHide }) {
+  const { editImage} = useBooksContext()
     const [value ,setvalue]=useState(BookData.title)
+
 
 
 
     // function on submit
     const handleOnSubmit = (e)=>{
 e.preventDefault()
-onEdit(BookData.id , value)
+editImage(BookData.id , value)
 onHide()
 
     };
@@ -36,7 +39,7 @@ setvalue(e.target.value)
 
    <form onSubmit={handleOnSubmit } >
 
- <center> <input style={{textAlign:'center' , width:'100% '}} onChange={handleonChange} type="text" value={value || ''} />  </center> <br />
+ <center> <input style={{textAlign:'center' , width:'100% '}} onChange={handleonChange} type="text" value={value} />  </center> <br />
  <center> <button  className=' btn btn-primary px-5' >Add</button> </center>
 
    </form>

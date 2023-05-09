@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import useBooksContext from '../hooks/UseBookContext';
 
 
-export default function BookCreate({ CreateBook }) {
+export default function BookCreate() {
     const [title , settitle]=useState()
+    const { CreateBook} = useBooksContext()
 
 
     //Function to get thevalue from the input
